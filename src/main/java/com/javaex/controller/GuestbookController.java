@@ -48,19 +48,18 @@ public class GuestbookController {
 	//-방명록 글 저장
 	@RequestMapping(value="add", method= {RequestMethod.GET, RequestMethod.POST})
 	public String add(@ModelAttribute GuestbookVO guestbookVO) {
-		           //D.S야!!!! request의 파라미터값을 꺼내서
-		           //GuestbookVO로 묶어줘
+		           // request의 파라미터값을 꺼내서 GuestbookVO로 묶기
 		System.out.println("GuestbookController.add()");	
 		/*D.S가 하는일
-		1)파라미터의 값을 꺼낸다
+		1)파라미터의 값을 꺼냄
 	    name=aaa                setName()
 		password=123            setPasswor()
 		content=abcdefg         setContent()
 
-		2)GuestbookVO 메모리에 올린다(기본생성자 사용!!!)
+		2)GuestbookVO 메모리에 올림(기본생성자 사용)
 	    GuestbookVO guestbookVO = new GuestbookVO();
 	
-		3)Setter로 값을 넣는다
+		3)Setter로 값 넣음
 	    name=aaa   --->     setName(aaa)
 	    password=123 --->   setPassword(123)
 	    content=abcdefg --> setContent(abcdefg)
@@ -69,7 +68,7 @@ public class GuestbookController {
 	    4)D.S는 add(guestbookVO)실행한다 
 		
 		
-		*url 파라미터이름 과 VO의 필드 이름을 같게 만든다
+		*url 파라미터이름과 VO 필드 이름을 같게 만든다
 		*/
 		System.out.println(guestbookVO);
 		GuestbookDAO guestbookDAO = new GuestbookDAO();
@@ -86,7 +85,7 @@ public class GuestbookController {
 	public String add(@RequestParam(value="name") String name, 
 			          @RequestParam(value="password") String pw, 
 			          @RequestParam(value="content") String content) {         
-		//D.S야!!!! request의 파라미터 영역의 name 인 값을 꺼내줘
+		//request의 파라미터 영역의 name 인 값을 꺼내기
 		
 		System.out.println("GuestbookController.add()");
 		
@@ -101,7 +100,7 @@ public class GuestbookController {
 	}
 	*/
 	
-	//삭제폼(삭제랑 헷갈리지 말자)  폼만 보여주면 됨
+	//삭제폼(폼만 보여줌)
 	@RequestMapping(value="rform", method = {RequestMethod.GET, RequestMethod.POST})
 	public String removeForm() {
 		System.out.println("GuestbookController.removeForm()");
