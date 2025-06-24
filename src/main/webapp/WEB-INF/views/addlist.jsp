@@ -8,27 +8,27 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<form>
+		<form action="${pageContext.request.contextPath}/add" method="get">
 			<table border="1" width="540px">
 				<tr>
 					<td>이름</td>
 					<td>
-						<input type="text" name="" value="">
+						<input type="text" name="name" value="">
 					</td>
 	
 					<td>비밀번호</td>
 	                <td>
-	                	<input type="password" name="" value="">
+	                	<input type="password" name="password" value="">
 	                </td>
 				</tr>
 				<tr>
 					<td colspan="4">
-						<textarea cols="72" rows="5"></textarea>
+						<textarea cols="72" rows="5" name="content"></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="4">
-						<button type="">등록</button>
+						<button type="submit">등록</button>
 					</td>
 				</tr>
 			</table>
@@ -42,7 +42,7 @@
 					<td>${guestbookVO.name}</td>
 					<td>${guestbookVO.regDate}</td>
 					<td>
-						<a href="">삭제</a>
+						<a href="${pageContext.request.contextPath}/rform?no=${guestbookVO.no}">삭제</a>
 					</td>
 				</tr>
 				<tr>
