@@ -17,8 +17,7 @@
 		]]>
 	</select>
 
-		
-	
+
 	<!-- 방명록저장 -->
 	<insert id="insert" parameterType="com.javaex.vo.GuestbookVO">
 		<![CDATA[    
@@ -27,8 +26,7 @@
 		]]>
 	</insert>
 	
-	
-	
+
 	<!-- 방명록삭제 -->
 	<delete id="delete" parameterType="com.javaex.vo.GuestbookVO">
 		<![CDATA[    
